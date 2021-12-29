@@ -1,0 +1,19 @@
+version: "3.7"
+services:
+  app:
+    image: liamdemafelix/php-container:latest
+    container_name: plex-refresh-app
+    working_dir: /var/www/
+    volumes:
+      - ./www:/var/www/
+    restart: unless-stopped
+
+  nginx:
+    image: nginx:1.20-alpine
+    container_name: plex-refresh-nginx
+    ports:
+      - "8000:80"
+    volumes:
+      - ./www:/var/www
+      - ./config/nginx:/etc/nginx/conf.d
+    restart: unless-stopped

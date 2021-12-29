@@ -1,0 +1,6 @@
+{
+    "require": {
+        "jc21/plex-api": "^1.2",
+        "vlucas/phpdotenv": "^5.4"
+    }
+}
