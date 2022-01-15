@@ -4,6 +4,7 @@ services:
     image: liamdemafelix/php-container:latest
     container_name: plex-refresh-app
     working_dir: /var/www/
+    user: app
     volumes:
       - ./www:/var/www/
     restart: unless-stopped
